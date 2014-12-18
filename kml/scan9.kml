@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>scan9.kml</name>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Folder>
+		<name>scan9</name>
+		<visibility>0</visibility>
+		<Placemark>
+			<name>Cano GPS</name>
+			<visibility>0</visibility>
+			<description>1907 hours</description>
+			<LookAt>
+				<gx:TimeStamp><when>2010-05-29T11:50:57Z</when>
+</gx:TimeStamp>
+				<longitude>-117.9674658652086</longitude>
+				<latitude>33.81772232374368</latitude>
+				<altitude>0</altitude>
+				<heading>0.2458847435963188</heading>
+				<tilt>0</tilt>
+				<range>6700.922075687899</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-117.9928813938063,33.8168764656215,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Cano GPS</name>
+			<visibility>0</visibility>
+			<description>1954 hours</description>
+			<LookAt>
+				<gx:TimeStamp><when>2010-05-29T11:50:57Z</when>
+</gx:TimeStamp>
+				<longitude>-117.9674658652086</longitude>
+				<latitude>33.81772232374368</latitude>
+				<altitude>0</altitude>
+				<heading>0.2458847435963188</heading>
+				<tilt>0</tilt>
+				<range>6700.922075687899</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-117.9922208699266,33.82014256462489,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Unreadable</name>
+			<visibility>0</visibility>
+			<LookAt>
+				<gx:TimeStamp><when>2010-05-29T11:50:57Z</when>
+</gx:TimeStamp>
+				<longitude>-117.9674658598612</longitude>
+				<latitude>33.81772234016383</latitude>
+				<altitude>0</altitude>
+				<heading>0.2458847465724517</heading>
+				<tilt>0</tilt>
+				<range>6700.932942184291</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-117.9956064603221,33.8187534753116,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Cano GPS</name>
+			<visibility>0</visibility>
+			<description>2002 hours</description>
+			<LookAt>
+				<gx:TimeStamp><when>2010-05-29T11:50:57Z</when>
+</gx:TimeStamp>
+				<longitude>-117.9902923362627</longitude>
+				<latitude>33.8461519185167</latitude>
+				<altitude>0</altitude>
+				<heading>0.2331708933102688</heading>
+				<tilt>0</tilt>
+				<range>2069.432769634466</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-117.996668978964,33.84808885756792,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Jarrae Estepp</name>
+			<visibility>0</visibility>
+			<description>2006 hours her phone goes dead</description>
+			<LookAt>
+				<gx:TimeStamp><when>2010-05-29T11:50:57Z</when>
+</gx:TimeStamp>
+				<longitude>-117.9621256742602</longitude>
+				<latitude>33.85433137191897</latitude>
+				<altitude>0</altitude>
+				<heading>0.2488587172606542</heading>
+				<tilt>0</tilt>
+				<range>6669.274487336514</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-117.9659122419843,33.85593736877888,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Cano GPS</name>
+			<visibility>0</visibility>
+			<description>2013 hours</description>
+			<LookAt>
+				<gx:TimeStamp><when>2010-05-29T11:50:57Z</when>
+</gx:TimeStamp>
+				<longitude>-117.9186073445432</longitude>
+				<latitude>33.85220069431688</latitude>
+				<altitude>0</altitude>
+				<heading>0.2730982595901889</heading>
+				<tilt>0</tilt>
+				<range>4924.296816797231</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-117.9238781993243,33.85378920260088,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Cano GPS</name>
+			<visibility>0</visibility>
+			<description>2017 hours</description>
+			<LookAt>
+				<gx:TimeStamp><when>2010-05-29T11:50:57Z</when>
+</gx:TimeStamp>
+				<longitude>-117.8544093569944</longitude>
+				<latitude>33.84322908887636</latitude>
+				<altitude>0</altitude>
+				<heading>0.308852247062891</heading>
+				<tilt>0</tilt>
+				<range>5092.277353266385</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-117.8550130812238,33.84879901068229,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

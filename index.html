@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Map test</title>
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div id="map"></div>
+    <form action="" id="case_select" class="vic-select">
+      <label>
+        <input type="radio" name="case" value="vargas" checked>
+        <img src="img/victim-vargas-edit.jpg">
+      </label>
+      <label>
+        <input type="radio" name="case" value="jackson">
+        <img src="img/victim-jackson3-edit.jpg" class="grey">
+      </label>
+      <label>
+        <input type="radio" name="case" value="estepp">
+        <img src="img/victim-estepp-edit.jpg"  class="grey">
+      </label>
+      <label>
+        <input type="radio" name="case" value="anaya">
+        <img src="img/victim-anaya3-edit.jpg" class="grey">
+      </label>
+      <label>
+        <input type="radio" name="case" value="gordon">
+        <img src="img/suspect-gordon-edit.jpg" class="grey" style="margin-left:200px">
+      </label>
+      <label>
+        <input type="radio" name="case" value="cano">
+        <img src="img/suspect-cano-edit.jpg" class="grey">
+      </label>
+    </form>
+    <button id="previous">Previous</button>
+    <button id="next">Next</button>
+    <div id="chart"></div>
+
+    <div class="info-panel">
+      <h3 id="person"></h3>
+      <p id="date"></p>
+      <p id="time"></p>
+    </div>
+
+    <div class="bio" id="jackson">
+      <img src="img/victim-jackson3-edit.jpg">
+      <h3>KIANNA JACKSON, 20</h3>
+
+      <p><strong>Background:</strong> When she disappeared on Oct. 6, 2013, Kianna Jackson was staying at a cheap motel in Costa Mesa and working as a prostitute along Harbor Boulevard. She had previously lived in Las Vegas.</p>
+
+      <p><strong>Family:</strong> Jackson often talked on the phone with her mother, Kathy Menzies of Mendocino County, and posted to social media such as Instagram and Facebook. After Oct. 6, Menzies said, the calls and posts suddenly ceased. "She just dropped off."</p>
+
+      <p><strong>Last heard from:</strong> According to court records, Jackson sent a text message at 3:09 p.m. Oct. 6, 2013, from a location near Harbor Boulevard and McFadden Avenue, a well-known prostitution hub, and received a text at 4:05 p.m. while in an industrial area of Anaheim.</p>
+
+      <p><strong>Status:</strong> Jackson remains missing. Authorities believe she was kidnapped, raped and murdered, and left in a dumpster at an auto body shop where one of her killers worked. Her body is believed to be buried at a landfill in Sylmar or Brea.</p>
+    </div>
+
+    <div class="bio" id="estepp">
+      <img src="img/victim-estepp-edit.jpg">
+      <h3>JARRAE ESTEPP, 21</h3>
+
+      <p><strong>Background:</strong> Jarrae Estepp arrived in Orange County on March 13, 2014, on a Greyhound bus from Oklahoma. Authorities believe she came to work as prostitute near Beach Boulevard and West Ball Road in Anaheim, a prostitution hub.</p>
+
+      <p><strong>Family:</strong> Estepp is the mother of a 3-year-old boy. Jodi Pier-Estepp said her daughter tried leaving prostitution and working as an exotic dancer. “That’s where her passion lay, and that’s what she enjoyed,” Estepp said. “I was perfectly fine with the exotic dancing and watched her dance. She loved the attention. She was very good at it … and I was proud of her.”</p>
+
+      <p><strong>Last heard from:</strong> Estepp received a phone call while she was near Beach Boulevard and West Ball Road at 7:08 p.m. on March 13, 2014, and her phone died minutes later, while she was near Brookhurst and the 91 freeway, court records show. The next morning her body was found on a conveyer belt at an Anaheim recycling facility, sparking a homicide investigation.</p>
+
+      <p><strong>Status:</strong> Estepp’s body has been cremated. Her family plans to bury the ashes in February 2015 at her father’s gravesite in Oklahoma. Authorities believe she was kidnapped, raped and murdered, and left in a dumpster at an auto body shop where one of her killers worked.</p>
+    </div>
+
+    <div class="bio" id="anaya">
+      <img src="img/victim-anaya3-edit.jpg">
+      <h3>MARTHA ANAYA, 27</h3>
+
+      <p><strong>Background:</strong> Martha Anaya lived in Santa Ana, and prosecutors say she sometimes worked as a prostitute. She is the mother of two girls, ages 6 and 13. “We’d joke around as if we were sisters or best friends,” said Melody Anaya, the older daughter.</p>
+
+      <p><strong>Family:</strong> Anaya’s mother, Herlinda Salcido, said she usually spoke with her daughter several times a day and always said "good night" around bedtime. On Nov. 12, 2013, a few weeks before Anaya planned a birthday celebration, she disappeared.</p>
+
+      <p><strong>Last heard from:</strong> According to court records, a phone call to Anaya’s cellphone at 6:26 p.m. Nov. 12, 2013, puts her near First Street and Grand Avenue in Santa Ana, a neighborhood known for drugs and prostitution, a few blocks west of Josephine Vargas’ last known location.</p>
+
+      <p><strong>Status:</strong> Anaya remains missing. Authorities believe she was kidnapped, raped and murdered, and left in a dumpster at an auto body shop where one of her killers worked. Her body is believed to be buried at a landfill in Sylmar or Brea.</p>
+    </div>
+
+    <div class="bio" id="vargas">
+      <img src="img/victim-vargas-edit.jpg">
+      <h3>JOSEPHINE VARGAS, 34</h3>
+
+      <p><strong>Background:</strong> Prosecutors say Josephine Vargas struggled with drug addiction throughout her adult life and sometimes worked as a prostitute to feed her habits. She normally slept at a Santa Ana motel with her husband, Robert Zanbrano, or at her sister's home.</p>
+
+      <p><strong>Family:</strong> Neither Zanbrano nor Vargas' sister knew where to find her on Oct. 24, 2013. Vargas just vanished. "Everything was fine. I talked to her the 23rd at night. The 24th I didn't hear anymore from her," sister Deseree Vargas said. Josephine Vargas has three daughters.</p>
+
+      <p><strong>Last heard from:</strong> On the day of her disappearance, court records show, Vargas was near First Street and the 55 freeway in Santa Ana, another prostitution hub, and heading north toward the same industrial area in Anaheim from which Kianna Jackson disappeared.</p>
+
+      <p><strong>Status:</strong> Vargas remains missing. Authorities believe she was kidnapped, raped and murdered, and left in a dumpster at an auto body shop where one of her killers worked. Her body is believed to be buried at a landfill in Sylmar or Brea.</p>
+    </div>
+
+    <div class="bio" id="gordon">
+      <img src="img/suspect-gordon-edit.jpg">
+      <h3>STEVE GORDON, 45</h3>
+
+      <p><strong>Background:</strong> Steve Gordon became a registered sex offender after being convicted in 1992 of molesting a 14-year-old nephew in Oklahoma. Prior to his arrest on April 11, 2014, he worked for Boss Paint &amp; Body in an industrial area of Anaheim near North Tustin Avenue and East La Palma Avenue. </p>
+
+      <p><strong>Friendship:</strong> Gordon was close friends with Franc Cano. Each was a registered sex offender, living homeless in Anaheim and under the supervision of state or federal authorities. They twice cut off their GPS bracelets and fled the state together.</p>
+
+      <p><strong>Charges:</strong> Gordon and Cano are charged with kidnapping, raping and slaying Kianna Jackson, Josephine Vargas, Martha Anaya and Jarrae Estepp between October 2013 and March 2014. They have pleaded not guilty and are awaiting trial. If convicted, they could face life in prison or the death penalty. The men have not been charged with any crimes stemming from the fifth, unidentified woman.</p>
+
+      <p><strong>Supervision:</strong> Gordon was supervised by federal probation officers during the time all four of the incidents occurred and concurrently supervised by state parole agents during the time first two incidents occurred. He wore a state-monitored GPS ankle bracelet during the first two incidents, no bracelet during the third incident (despite a court order) and a federally monitored device during the fourth.</p>
+    </div>
+
+    <div class="bio" id="cano">
+      <img src="img/suspect-cano-edit.jpg">
+      <h3>FRANK CANO, 28</h3>
+
+      <p><strong>Background:</strong> Cano became a registered sex offender after being convicted in 2007 of molesting a 9-year-old niece in Orange County. Prior to his arrest on April 11, 2014, he was unemployed and living in an industrial area of Anaheim near North Tustin Avenue and East La Palma Avenue.</p>
+
+      <p><strong>Friendship:</strong> Cano was close friends with Steve Gordon. Each was a registered sex offender, living homeless in Anaheim and under the supervision of state or federal authorities. They twice cut off their GPS bracelets and fled the state together.</p>
+
+      <p><strong>Charges:</strong> Cano and Gordon are charged with kidnapping, raping and slaying Kianna Jackson, Josephine Vargas, Martha Anaya and Jarrae Estepp between October 2013 and March 2014. They have pleaded not guilty and are awaiting trial. If convicted, they could face life in prison or the death penalty. The men have not been charged with any crimes stemming from the fifth, unidentified woman.</p>
+
+      <p><strong>Supervision:</strong> Cano was supervised by federal probation officers and state parole agents during the time all four of the incidents occurred. He wore a state-monitored GPS ankle bracelet throughout the period.</p>
+    </div>
+ 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
+
+

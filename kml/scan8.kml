@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>scan8.kml</name>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Folder>
+		<name>scan8</name>
+		<visibility>0</visibility>
+		<Placemark>
+			<name>Cano GPS</name>
+			<visibility>0</visibility>
+			<description>1826 hours</description>
+			<LookAt>
+				<gx:TimeStamp><when>2010-05-29T11:50:57Z</when>
+</gx:TimeStamp>
+				<longitude>-117.8451866128938</longitude>
+				<latitude>33.74333612686673</latitude>
+				<altitude>0</altitude>
+				<heading>0.3136870315523277</heading>
+				<tilt>0</tilt>
+				<range>2538.822612261532</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-117.850686690621,33.74482513262408,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Martha Anaya</name>
+			<visibility>0</visibility>
+			<description>1826 hours</description>
+			<LookAt>
+				<gx:TimeStamp><when>2010-05-29T11:50:57Z</when>
+</gx:TimeStamp>
+				<longitude>-117.8370640749244</longitude>
+				<latitude>33.74381079365806</latitude>
+				<altitude>0</altitude>
+				<heading>0.3181985387380199</heading>
+				<tilt>0</tilt>
+				<range>2543.208004641323</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-117.8471994190217,33.74572955124779,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Cano GPS</name>
+			<visibility>0</visibility>
+			<description>1829 hours</description>
+			<LookAt>
+				<gx:TimeStamp><when>2010-05-29T11:50:57Z</when>
+</gx:TimeStamp>
+				<longitude>-117.831136491432</longitude>
+				<latitude>33.74266967551269</latitude>
+				<altitude>0</altitude>
+				<heading>0.3214908886804161</heading>
+				<tilt>0</tilt>
+				<range>2543.401748583408</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-117.8343865940614,33.74556795255465,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Cano GPS</name>
+			<visibility>0</visibility>
+			<description>1833 hours</description>
+			<LookAt>
+				<gx:TimeStamp><when>2010-05-29T11:50:57Z</when>
+</gx:TimeStamp>
+				<longitude>-117.8286437625274</longitude>
+				<latitude>33.75868406578104</latitude>
+				<altitude>0</altitude>
+				<heading>0.3228756577136937</heading>
+				<tilt>0</tilt>
+				<range>2940.7798649478</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-117.8314836018975,33.75773166334994,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Cano GPS</name>
+			<visibility>0</visibility>
+			<description>1831 hours</description>
+			<LookAt>
+				<gx:TimeStamp><when>2010-05-29T11:50:57Z</when>
+</gx:TimeStamp>
+				<longitude>-117.8290298335853</longitude>
+				<latitude>33.75033890759877</latitude>
+				<altitude>0</altitude>
+				<heading>0.3226566035106386</heading>
+				<tilt>0</tilt>
+				<range>1500.245496464228</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-117.8316565906945,33.74882602551063,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

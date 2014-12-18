@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>scan2.kml</name>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Folder>
+		<name>scan2</name>
+		<Placemark>
+			<name>Cano and Gordon</name>
+			<description>1543 hours</description>
+			<LookAt>
+				<gx:TimeStamp><when>2010-05-29T11:50:57Z</when>
+</gx:TimeStamp>
+				<longitude>-117.9023626671522</longitude>
+				<latitude>33.78493221770663</latitude>
+				<altitude>0</altitude>
+				<heading>0.3878602067434661</heading>
+				<tilt>0</tilt>
+				<range>7566.767465561456</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-117.9017618649456,33.77529191054857,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Kianna Jackson</name>
+			<description>1509 hours</description>
+			<LookAt>
+				<gx:TimeStamp><when>2010-05-29T11:50:57Z</when>
+</gx:TimeStamp>
+				<longitude>-117.9163211668486</longitude>
+				<latitude>33.74242778959884</latitude>
+				<altitude>0</altitude>
+				<heading>0.3800984742548799</heading>
+				<tilt>0</tilt>
+				<range>4896.384241527474</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-117.921772902111,33.7383168273565,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Cano and Gordon</name>
+			<description>1521 hours</description>
+			<LookAt>
+				<gx:TimeStamp><when>2010-05-29T11:50:57Z</when>
+</gx:TimeStamp>
+				<longitude>-117.9043943544208</longitude>
+				<latitude>33.74747564472044</latitude>
+				<altitude>0</altitude>
+				<heading>0.3867235647939417</heading>
+				<tilt>0</tilt>
+				<range>4893.010197750786</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-117.9173839298793,33.74516192484975,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Cano and Gordon</name>
+			<description>1556 hours</description>
+			<LookAt>
+				<gx:TimeStamp><when>2010-05-29T11:50:57Z</when>
+</gx:TimeStamp>
+				<longitude>-117.8697737203653</longitude>
+				<latitude>33.80701081737401</latitude>
+				<altitude>0</altitude>
+				<heading>0.4059717746678597</heading>
+				<tilt>0</tilt>
+				<range>8036.03071084692</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-117.8800399878015,33.80467251340431,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Cano and Gordon</name>
+			<description>1558 hours</description>
+			<LookAt>
+				<gx:TimeStamp><when>2010-05-29T11:50:57Z</when>
+</gx:TimeStamp>
+				<longitude>-117.8572291314084</longitude>
+				<latitude>33.84153296212533</latitude>
+				<altitude>0</altitude>
+				<heading>0.4129540429681058</heading>
+				<tilt>0</tilt>
+				<range>8667.350976583077</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-117.8756035288479,33.8483691389459,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Kianna Jackson</name>
+			<description>1605 hours</description>
+			<LookAt>
+				<gx:TimeStamp><when>2010-05-29T11:50:57Z</when>
+</gx:TimeStamp>
+				<longitude>-117.8401511337491</longitude>
+				<latitude>33.84360001743372</latitude>
+				<altitude>0</altitude>
+				<heading>0.4224657522438451</heading>
+				<tilt>0</tilt>
+				<range>8658.886682396969</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-117.8520581314304,33.85254945743335,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Boss Paint &amp; Body</name>
+			<description>3421 E. La Palma
+Anaheim, CA</description>
+			<LookAt>
+				<gx:TimeStamp><when>2010-05-29T11:50:57Z</when>
+</gx:TimeStamp>
+				<longitude>-117.8381501819077</longitude>
+				<latitude>33.84969436825305</latitude>
+				<altitude>0</altitude>
+				<heading>0.423578700186914</heading>
+				<tilt>0</tilt>
+				<range>11422.7789757109</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-117.8467989947825,33.85406469786021,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Cano and Gordon</name>
+			<description>1605 hours</description>
+			<LookAt>
+				<gx:TimeStamp><when>2010-05-29T11:50:57Z</when>
+</gx:TimeStamp>
+				<longitude>-117.8020261521492</longitude>
+				<latitude>33.84969467093198</latitude>
+				<altitude>0</altitude>
+				<heading>0.4436994415235849</heading>
+				<tilt>0</tilt>
+				<range>11369.88313891177</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-117.8467995412536,33.8538380416654,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>
