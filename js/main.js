@@ -123,30 +123,39 @@ d3.csv("csv/events-combined.csv", function (data){
 				//canoA.addTo(map);
 				//gordonA.addTo(map);
 				$('#map_date').html('10/06/2013');
+				$('#map_date').css('visibility', 'visible');
 			break;
 			case "vargas":
 				//canoC.addTo(map);
 				//gordonC.addTo(map);
 				$('#map_date').html('10/24/2013');
+				$('#map_date').css('visibility', 'visible');
 			break;
 			case "anaya":
 				//canoF.addTo(map);
 				$('#map_date').html('11/12/2013');
+				$('#map_date').css('visibility', 'visible');
 			break;
 			case "estepp":
 				$('#map_date').html('03/13/2014');
+				$('#map_date').css('visibility', 'visible');
+			break;
+			case "unknown":
+				$('#map_date').css('visibility', 'hidden');
 			break;
 			case "cano":
 				anayaLine.addTo(map);
 				esteppLine.addTo(map);
 				jacksonLine.addTo(map);
 				vargasLine.addTo(map);
+				$('#map_date').css('visibility', 'hidden');
 			break;
 			case "gordon":
 				anayaLine.addTo(map);
 				esteppLine.addTo(map);
 				jacksonLine.addTo(map);
-				vargasLine.addTo(map);	
+				vargasLine.addTo(map);
+				$('#map_date').css('visibility', 'hidden');
 			break;
 		}
 

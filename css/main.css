@@ -43,6 +43,7 @@ g.active{
 	float: right;
 	height:auto;
 	padding: 10px;
+	margin-top: 40px;
 }
 label img{
 	width: 100px;
