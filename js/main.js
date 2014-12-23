@@ -29,7 +29,7 @@ var susColor = "#d90000";
 markers = new L.FeatureGroup();
 map.addLayer(markers);
 
-var home = L.marker([33.85515, -117.84627], {icon: homeIcon}).addTo(map);
+var home = L.marker([33.85515, -117.84627], {icon: homeIcon}).bindPopup("Cano/Gordon home and work").addTo(map);
 
 L.circle([33.8472089, -117.9179817], 100, {color: "#000", fillOpacity: .8, opacity: .3})
 				.bindPopup("Dumpster location")
@@ -74,10 +74,6 @@ d3.csv("csv/events-combined.csv", function (data){
 
 	var currentCase = $("input:radio[name=case]:checked")[0].defaultValue;
 	var currentIndex = 0;
-
-	map.on('click', function(e) {
-    	console.log({"case": currentCase, "zoom": e.target._zoom, "lat": e.latlng.lat, "lon": e.latlng.lng});
-	});
 
 	$.each( $('.bio'), function (i,d){ (d.id === currentCase) ? $(d).css('visibility','visible') : $(d).css('visibility','hidden')} );
 
