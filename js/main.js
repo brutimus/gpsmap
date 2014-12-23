@@ -1,11 +1,19 @@
 
-var testIcon = L.icon({
-    iconUrl: 'img/test-pointer.png',
+var homeIcon = L.icon({
+    iconUrl: 'img/star.png',
 
-    iconSize:     [148/8, 234/8],
-    iconAnchor:   [72/8, 235/8],
-    popupAnchor:  [-3, -76]
+    iconSize:     [150/4, 150/4],
+    iconAnchor:   [150/8, 150/8],
+    popupAnchor:  [1, 1]
 });
+
+var mapCenters = [{case: "vargas", zoom: 12, lat: 33.797979374698, lon: -117.84793853759764},
+	{case: "jackson", zoom: 12, lat: 33.7934144111874, lon: -117.8788375854492},
+	{case: "estepp", zoom: 12, lat: 33.794555674887555, lon: -117.89154052734375},
+	{case: "anaya", zoom: 12, lat: 33.803114667648735, lon: -117.89703369140625},
+	{case: "unknown", zoom: 12,lat: 33.803114667648735, lon: -117.89703369140625},
+	{case: "gordon", zoom: 12, lat: 33.804541083228784, lon: -117.894287109375},
+	{case: "cano", zoom: 12, lat: 33.804541083228784, lon: -117.894287109375}];
 
 
 
@@ -16,10 +24,21 @@ var map = new L.Map("map", {
 });
 map.addLayer(layer);
 
+var susColor = "#d90000";
+
 markers = new L.FeatureGroup();
 map.addLayer(markers);
 
-var testPerson = L.marker([0, 0], {icon: testIcon});
+var home = L.marker([33.85515, -117.84627], {icon: homeIcon}).addTo(map);
+
+L.circle([33.8472089, -117.9179817], 100, {color: "#000", fillOpacity: .8, opacity: .3})
+				.bindPopup("Dumpster location")
+				.addTo(map);
+
+
+//console.log( $('.vic-select img').css('border', "5px solid red" );
+
+$('.vic-select img').map(function (i,d){ $(d).css('border-bottom', '5px solid ' + getColor($(d).prev()[0].defaultValue)) })
 
 
 // $.getJSON("points.json", function (data){
@@ -30,37 +49,24 @@ var testPerson = L.marker([0, 0], {icon: testIcon});
 // 	});
 // });
 
-var canoStyle = {
-    "color": "#ff7800",
-    "weight": 5,
-    "opacity": 0.65
-};
-
-var canoA;
+var jacksonLine;
 $.getJSON("json/cano-a.geojson", function (data){
-	canoA = L.geoJson(data, {style: canoStyle});
+	jacksonLine = L.geoJson(data, {style: getLineStyle("jackson")});
 });
 
-var gordonA;
-$.getJSON("json/gordon-a.geojson", function (data){
-	gordonA = L.geoJson(data);
-});
-
-var canoC;
+var vargasLine;
 $.getJSON("json/cano-c.geojson", function (data){
-	canoC = L.geoJson(data, {style: canoStyle}).addTo(map);
-	canoC.addTo(map);
+	vargasLine = L.geoJson(data, {style: getLineStyle("vargas")});
 });
 
-var gordonC;
-$.getJSON("json/gordon-c.geojson", function (data){
-	gordonC = L.geoJson(data).addTo(map);
-	gordonC.addTo(map);
-});
-
-var canoF;
+var anayaLine;
 $.getJSON("json/cano-f.geojson", function (data){
-	canoF = L.geoJson(data, {style: canoStyle});
+	anayaLine = L.geoJson(data, {style: getLineStyle("anaya")});
+});
+
+var esteppLine;
+$.getJSON("json/cano-i.geojson", function (data){
+	esteppLine = L.geoJson(data, {style: getLineStyle("estepp")});
 });
 
 
@@ -69,13 +75,17 @@ d3.csv("csv/events-combined.csv", function (data){
 	var currentCase = $("input:radio[name=case]:checked")[0].defaultValue;
 	var currentIndex = 0;
 
+	map.on('click', function(e) {
+    	console.log({"case": currentCase, "zoom": e.target._zoom, "lat": e.latlng.lat, "lon": e.latlng.lng});
+	});
+
 	$.each( $('.bio'), function (i,d){ (d.id === currentCase) ? $(d).css('visibility','visible') : $(d).css('visibility','hidden')} );
 
 	data.forEach(function (d){
 
 		if(d.case === currentCase){
-			L.circle([d.lat, d.lon], 100, {color: getColor(d.case), fillOpacity: 0, opacity: 1}).addTo(map)
-				.bindPopup(d.desc)
+			L.circle([d.lat, d.lon], 100, {color: (d.marker === "cg") ? susColor : getColor(d.case), fillOpacity: .8, opacity: .3}).addTo(map)
+				.bindPopup(d.desc + " " + d.time)
 				.addTo(markers);
 		}
 		
@@ -92,47 +102,6 @@ d3.csv("csv/events-combined.csv", function (data){
 
 	});
 
-	$("#next").click( function (e){
-
-		var dset = nest.filter(function (d){ return d.key === currentCase})[0];
-
-		if(currentIndex >= dset.values.length -1){
-			currentIndex = 0;
-		}
-		else{
-			currentIndex += 1;
-		};
-
-		markers.removeLayer(testPerson);
-
-		testPerson = L.marker([dset.values[currentIndex].lat, dset.values[currentIndex].lon], {icon: testIcon});
-		testPerson.addTo(markers);
-
-		updateInfoPanel(dset.values[currentIndex]);
-		matchPoint(dset.values[currentIndex]);
-
-
-	});
-	$("#previous").click( function (e){
-
-		var dset = nest.filter(function (d){ return d.key === currentCase})[0];
-
-		if(currentIndex > 0){
-			currentIndex -= 1;
-		}
-		else{
-			currentIndex = dset.values.length -1;
-		};
-
-		markers.removeLayer(testPerson);
-
-		testPerson = L.marker([dset.values[currentIndex].lat, dset.values[currentIndex].lon], {icon: testIcon});
-		testPerson.addTo(markers);
-
-		updateInfoPanel(dset.values[currentIndex]);
-
-	});
-
 	$("input:radio[name=case]").click(function() {
 		currentCase = $(this).val();
 
@@ -144,84 +113,44 @@ d3.csv("csv/events-combined.csv", function (data){
     	redraw();
 	});
 
-
-
-	var tscale = d3.time.scale().range([20,780]);
-
-	var nest = d3.nest()
-		.key(function(d) { return d['case']; })
-		.entries(data);
-			
-	var svg = d3.select("#chart")
-		.append("svg")
-		.attr("width", 800)
-		.attr("height", 300);
-
-	var timeline = svg.append("g")
-		.attr("transform", "translate(0,25)" );
-
-	timeline.append("line")
-		.attr("x1", 0)
-		.attr("x2", 800)
-		.attr("y1", 0)
-		.attr("y2", 0);
-
-	var currentVals = nest.filter(function (d){ return d.key === currentCase})[0].values;
-
-	tscale.domain( [d3.min(currentVals, function(d){return d.jstime}), d3.max(currentVals, function(d){return d.jstime})] );
-	//console.log(d3.min(currentVals))
-
-	timeline.selectAll("circle")
-		.data( currentVals )
-		.enter()
-		.append("circle")
-		.attr("cx", function (d){ return tscale( d.jstime ) })
-		//.attr("cy", function (d,i){ return i * 2 })
-		.attr("r", 5)
-		.attr("fill", function(d){ return getColor(d.case)})
-		.attr("opacity", 0.5)
-		.on("mouseover", function (e){
-			d3.select(this)
-				.attr("opacity", 1)
-				.attr("r", 7);
-		})
-		.on("mouseout", function (e){
-			d3.select(this)
-				.attr("opacity", 0.5)
-				.attr("r", 5);
-		});
-	var tf = d3.time.format("%I:%M %p");
-
-	timeline.selectAll("text")
-		.data(currentVals)
-		.enter()
-		.append("text")
-		.attr("class", "timelabel")
-		.attr("y", -10)
-		.attr("x", function (d){ return tscale( d.jstime ) })
-		.text(function (d){ return tf(d.jstime) })
-
 	function redraw(){
-		map.removeLayer(canoA);
-		map.removeLayer(gordonA);
-		map.removeLayer(canoC);
-		map.removeLayer(gordonC);
-		map.removeLayer(canoF);
+		map.removeLayer(anayaLine);
+		map.removeLayer(esteppLine);
+		map.removeLayer(jacksonLine);
+		map.removeLayer(vargasLine);
+
+		var center = mapCenters.filter(function (d){ return d.case === currentCase})[0];
+		map.setView([center.lat,center.lon], center.zoom);
 
 		switch(currentCase){
 			case "jackson":
-				canoA.addTo(map);
-				gordonA.addTo(map);				
+				//canoA.addTo(map);
+				//gordonA.addTo(map);
+				$('#map_date').html('10/06/2013');
 			break;
 			case "vargas":
-				canoC.addTo(map);
-				gordonC.addTo(map);
+				//canoC.addTo(map);
+				//gordonC.addTo(map);
+				$('#map_date').html('10/24/2013');
 			break;
 			case "anaya":
-				canoF.addTo(map);
+				//canoF.addTo(map);
+				$('#map_date').html('11/12/2013');
 			break;
 			case "estepp":
-				
+				$('#map_date').html('03/13/2014');
+			break;
+			case "cano":
+				anayaLine.addTo(map);
+				esteppLine.addTo(map);
+				jacksonLine.addTo(map);
+				vargasLine.addTo(map);
+			break;
+			case "gordon":
+				anayaLine.addTo(map);
+				esteppLine.addTo(map);
+				jacksonLine.addTo(map);
+				vargasLine.addTo(map);	
 			break;
 		}
 
@@ -233,68 +162,17 @@ d3.csv("csv/events-combined.csv", function (data){
 		data.forEach(function (d){
 
 			if(d.case === currentCase){
-				L.circle([d.lat, d.lon], 100, {color: getColor(d.case), fillOpacity: 0, opacity: 1}).addTo(map)
-					.bindPopup(d.desc)
+				L.circle([d.lat, d.lon], 100, {color: (d.marker === "cg") ? susColor : getColor(d.case), fillOpacity: .8, opacity: .3}).addTo(map)
+					.bindPopup(d.desc + " " + d.time)
 					.addTo(markers);
 			};
 		
 		});
 
-		timeline.selectAll("circle").remove();
-		timeline.selectAll("text").remove();
-
-		var currentVals = nest.filter(function (d){ return d.key === currentCase})[0].values;
-
-		tscale.domain( [d3.min(currentVals, function(d){return d.jstime}), d3.max(currentVals, function(d){return d.jstime})] )
-
-		timeline.selectAll("circle")
-			.data( currentVals )
-			.enter()
-			.append("circle")
-			.attr("cx", function (d){ return tscale( d.jstime ) })
-			//.attr("cy", function (d,i){ return i * 2 })
-			.attr("r", 5)
-			.attr("fill", function(d){ return getColor(d.case)})
-			.attr("opacity", 0.5)
-			.on("mouseover", function (e){
-				d3.select(this)
-					.attr("opacity", 1)
-					.attr("r", 7);
-			})
-			.on("mouseout", function (e){
-				d3.select(this)
-					.attr("opacity", 0.5)
-					.attr("r", 5);
-			});
-
-		timeline.selectAll("text")
-			.data(currentVals)
-			.enter()
-			.append("text")
-			.attr("class", "timelabel")
-			.attr("y", -10)
-			.attr("x", function (d){ return tscale( d.jstime ) })
-			.text(function (d){ return tf(d.jstime) });
-
-
-
-	};
-
-	function matchPoint(point){
-		console.log(point);
 
 	};
 
 
-
-
-	// timelines.selectAll("ticks")
-	// 	.data(hourScale.ticks(8))
-	// 	.enter()
-	// 	.append("text")
-	// 	.attr("class", "ticks")
-	// 	.text(function (d){ return Math.round( d/60 )})
-	// 	.attr("x", function (d){ return d});
 
 
 });
@@ -304,11 +182,19 @@ function updateInfoPanel(data){
 	$('#date').html(data.date);
 };
 
+function getLineStyle(vic){
+
+	return {
+	    "color": getColor(vic),
+	    "weight": 5,
+	    "opacity": 0.95
+	};
+};
 
 function getColor(slide){
 
 
-	var p = ["#a6cee3","#1f78b4","#b2df8a","#33a02c","#fb9a99","#e31a1c"];
+	var p = ["#377eb8","#4daf4a","#984ea3","#ff7f00", "#a65628"];
 	switch(slide){
 		case "jackson":
 			return p[0];
@@ -322,11 +208,17 @@ function getColor(slide){
 		case "estepp":
 			return p[3];
 		break;
-		case "Police":
+		case "unknown":
 			return p[4];
 		break;
+		case "cano":
+			return susColor;
+		break;
+		case "gordon":
+			return susColor;
+		break;
 		default:
-			return p[5];
+			return "#000";
 		break;
 	}
 };

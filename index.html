@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Map test</title>
+    <title>Map</title>
 
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <link rel="stylesheet" href="http://wordpress-ocregister.rhcloud.com/wp-content/themes/novella-child/assets/css/style.css?ver=1" />
     <link href="css/main.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -37,23 +38,19 @@
         <img src="img/victim-anaya3-edit.jpg" class="grey">
       </label>
       <label>
+        <input type="radio" name="case" value="unknown">
+        <img src="img/victim-unknown.png" class="grey">
+      </label>
+      <label>
         <input type="radio" name="case" value="gordon">
-        <img src="img/suspect-gordon-edit.jpg" class="grey" style="margin-left:200px">
+        <img src="img/suspect-gordon-edit.jpg" class="grey" style="margin-left:100px">
       </label>
       <label>
         <input type="radio" name="case" value="cano">
         <img src="img/suspect-cano-edit.jpg" class="grey">
       </label>
     </form>
-    <button id="previous">Previous</button>
-    <button id="next">Next</button>
-    <div id="chart"></div>
-
-    <div class="info-panel">
-      <h3 id="person"></h3>
-      <p id="date"></p>
-      <p id="time"></p>
-    </div>
+    <p id="map_date">11/23/2014</p>
 
     <div class="bio" id="jackson">
       <img src="img/victim-jackson3-edit.jpg">
@@ -105,6 +102,19 @@
       <p><strong>Last heard from:</strong> On the day of her disappearance, court records show, Vargas was near First Street and the 55 freeway in Santa Ana, another prostitution hub, and heading north toward the same industrial area in Anaheim from which Kianna Jackson disappeared.</p>
 
       <p><strong>Status:</strong> Vargas remains missing. Authorities believe she was kidnapped, raped and murdered, and left in a dumpster at an auto body shop where one of her killers worked. Her body is believed to be buried at a landfill in Sylmar or Brea.</p>
+    </div>
+
+    <div class="bio" id="unknown">
+      <img src="img/victim-unknown.png">
+      <h3>UNIDENTIFIED WOMAN</h3>
+
+      <p><strong>Background:</strong> In April 2014, Anaheim police announced that another woman may be linked to the case and asked for the public’s help to find her. She was described as a petite black woman in her early 20s with multiple tattoos and possible ties to Compton.</p>
+
+      <p><strong>Family:</strong> Unknown</p>
+
+      <p><strong>Last heard from:</strong> Police say the woman was last seen in mid-February 2014 near either Katella Avenue and Orangewood Avenue or Beach Boulevard north of Katella Avenue. She may have checked into a hotel and not checked out.</p>
+
+      <p><strong>Status:</strong> The woman remains unidentified. Authorities believe she met the same fate as the four other women.</p>
     </div>
 
     <div class="bio" id="gordon">

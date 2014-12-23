@@ -1,6 +1,16 @@
 #map {
-	width: 960px;
+	width: 820px;
 	height: 500px;
+}
+#map_date{
+	position: absolute;
+	top: 80px;
+	right: 500px;
+	color: #fff;
+	background-color: rgba(0,0,0,0.8);
+	padding: 10px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   	font-weight: 300;
 }
 
 line{
@@ -13,13 +23,6 @@ form.vic-select{
 	top: 200px;
 	position: absolute;*/
 }
-
-.info-panel{
-/*	float: right;
-	position: absolute;
-	top:20px;
-	right:20px;*/
-}
 g.inactive{
 	pointer-events: none;
 }
@@ -31,17 +34,20 @@ g.active{
 	position: absolute;
 	top: 10px;
 	right: 20px;
-	width: 260px;
+	width: 400px;
 	visibility: hidden;
 }
 
 .bio img{
-	width:100%;
+	width:50%;
+	float: right;
 	height:auto;
+	padding: 10px;
 }
 label img{
 	width: 100px;
 	height: auto;
+	margin-top: 3px;
 }
 label img:hover{
 	-webkit-filter: grayscale(0%);
@@ -58,9 +64,4 @@ label > input{ /* HIDE RADIO */
 	-moz-filter: grayscale(100%);
 	filter: grayscale(100%);
 	opacity: 0.5;
-}
-.timelabel{
-	font-family: sans-serif;	
-	font-size: 9px;
-	text-anchor: middle;
 }
