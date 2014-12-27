@@ -1,11 +1,9 @@
 #map {
-	width: 820px;
-	height: 500px;
+	width: 65%;
+	height: 460px;
 }
 #map_date{
 	position: absolute;
-	top: 80px;
-	right: 500px;
 	color: #fff;
 	background-color: rgba(0,0,0,0.8);
 	padding: 10px;
@@ -17,12 +15,6 @@ line{
 	stroke: #000;
 }
 
-form.vic-select{
-/*	float: right;
-	right: 20px;
-	top: 200px;
-	position: absolute;*/
-}
 g.inactive{
 	pointer-events: none;
 }
@@ -34,7 +26,7 @@ g.active{
 	position: absolute;
 	top: 10px;
 	right: 20px;
-	width: 400px;
+	width: 32%;
 	visibility: hidden;
 }
 
@@ -65,4 +57,38 @@ label > input{ /* HIDE RADIO */
 	-moz-filter: grayscale(100%);
 	filter: grayscale(100%);
 	opacity: 0.5;
+}
+
+div.arrow-right {
+	position: absolute;
+	top: 300px;
+	right: 20px;
+	margin: 10px;
+	width: 0; 
+	height: 0; 
+	border-bottom: 30px solid transparent;  /* left arrow slant */
+	border-top: 30px solid transparent; /* right arrow slant */
+	border-left: 30px solid #2f2f2f; /* bottom, add background color here */
+	font-size: 0;
+	line-height: 0;
+	opacity: 0.1;
+}
+div.arrow-right:hover {
+	opacity: 0.8;
+}
+div.arrow-left:hover {
+	opacity: 0.8;
+}
+div.arrow-left {
+	position: absolute;
+	top: 300px;
+	left: 20px;
+	width: 0; 
+	height: 0; 
+	border-bottom: 30px solid transparent;  /* left arrow slant */
+	border-top: 30px solid transparent; /* right arrow slant */
+	border-right: 30px solid #2f2f2f; /* bottom, add background color here */
+	font-size: 0;
+	line-height: 0;
+	opacity: 0.1;
 }

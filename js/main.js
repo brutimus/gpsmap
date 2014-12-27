@@ -15,8 +15,6 @@ var mapCenters = [{case: "vargas", zoom: 12, lat: 33.797979374698, lon: -117.847
 	{case: "gordon", zoom: 12, lat: 33.804541083228784, lon: -117.894287109375},
 	{case: "cano", zoom: 12, lat: 33.804541083228784, lon: -117.894287109375}];
 
-
-
 var layer = new L.StamenTileLayer("toner");
 var map = new L.Map("map", {
     center: new L.LatLng(33.846725, -117.940349),
@@ -35,19 +33,7 @@ L.circle([33.8472089, -117.9179817], 100, {color: "#000", fillOpacity: .8, opaci
 				.bindPopup("Dumpster location")
 				.addTo(map);
 
-
-//console.log( $('.vic-select img').css('border', "5px solid red" );
-
-$('.vic-select img').map(function (i,d){ $(d).css('border-bottom', '5px solid ' + getColor($(d).prev()[0].defaultValue)) })
-
-
-// $.getJSON("points.json", function (data){
-// 	data.forEach(function (d){
-// 		L.circle([d.lat + Math.random() * .001, d.lon + Math.random() * .001], 100, {color: getColor(d.slide), fillOpacity: 0, opacity: 1}).addTo(map)
-// 			.bindPopup(d.description)
-// 			.addTo(map);
-// 	});
-// });
+$('.vic-select img').map(function (i,d){ $(d).css('border-bottom', '5px solid ' + getColor($(d).prev()[0].defaultValue)) });
 
 var jacksonLine;
 $.getJSON("json/cano-a.geojson", function (data){
@@ -70,10 +56,53 @@ $.getJSON("json/cano-i.geojson", function (data){
 });
 
 
-d3.csv("csv/events-combined.csv", function (data){
+$.getJSON("json/events.json", function (data){
+
+	$('label img').css('width', ($('#map').width() - 22) / 8);
+	
+	$('#map_date').css("left", $('#map').width() - 125)
+	$('#map_date').css("top", '80px');
+
+	$('#next').click(function (e){
+		
+		var index = 0;
+		mapCenters.forEach( function (d,i){
+			if(d.case === currentCase){
+				index = i;
+			}
+		} );
+		if(index + 1 < $('input').length){
+			currentCase = mapCenters[index + 1].case ;
+			
+		}
+		else{
+			currentCase = mapCenters[0].case
+		}
+
+		$($("input:radio[name=case]").filter( function (i,d){ return d.defaultValue === currentCase } )[0]).trigger("click");
+
+	});
+	$('#previous').click(function (e){
+		
+		var index = 0;
+		mapCenters.forEach( function (d,i){
+			if(d.case === currentCase){
+				index = i;
+			}
+		} );
+		if(index != 0){
+			currentCase = mapCenters[index - 1].case ;
+			
+		}
+		else{
+			currentCase = mapCenters[ $('input').length - 1].case
+		}
+
+		$($("input:radio[name=case]").filter( function (i,d){ return d.defaultValue === currentCase } )[0]).trigger("click");
+
+	});
 
 	var currentCase = $("input:radio[name=case]:checked")[0].defaultValue;
-	var currentIndex = 0;
 
 	$.each( $('.bio'), function (i,d){ (d.id === currentCase) ? $(d).css('visibility','visible') : $(d).css('visibility','hidden')} );
 
@@ -81,7 +110,7 @@ d3.csv("csv/events-combined.csv", function (data){
 
 		if(d.case === currentCase){
 			L.circle([d.lat, d.lon], 100, {color: (d.marker === "cg") ? susColor : getColor(d.case), fillOpacity: .8, opacity: .3}).addTo(map)
-				.bindPopup(d.desc + " " + d.time)
+				.bindPopup(d.keegan + " " + d.time)
 				.addTo(markers);
 		}
 		
@@ -120,19 +149,14 @@ d3.csv("csv/events-combined.csv", function (data){
 
 		switch(currentCase){
 			case "jackson":
-				//canoA.addTo(map);
-				//gordonA.addTo(map);
 				$('#map_date').html('10/06/2013');
 				$('#map_date').css('visibility', 'visible');
 			break;
 			case "vargas":
-				//canoC.addTo(map);
-				//gordonC.addTo(map);
 				$('#map_date').html('10/24/2013');
 				$('#map_date').css('visibility', 'visible');
 			break;
 			case "anaya":
-				//canoF.addTo(map);
 				$('#map_date').html('11/12/2013');
 				$('#map_date').css('visibility', 'visible');
 			break;
@@ -168,7 +192,7 @@ d3.csv("csv/events-combined.csv", function (data){
 
 			if(d.case === currentCase){
 				L.circle([d.lat, d.lon], 100, {color: (d.marker === "cg") ? susColor : getColor(d.case), fillOpacity: .8, opacity: .3}).addTo(map)
-					.bindPopup(d.desc + " " + d.time)
+					.bindPopup(d.keegan + " " + d.time)
 					.addTo(markers);
 			};
 		
@@ -181,11 +205,6 @@ d3.csv("csv/events-combined.csv", function (data){
 
 
 });
-function updateInfoPanel(data){
-	$('#person').html(data.desc);
-	$('#time').html(data.time);
-	$('#date').html(data.date);
-};
 
 function getLineStyle(vic){
 
