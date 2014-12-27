@@ -28,6 +28,8 @@ g.active{
 	right: 20px;
 	width: 32%;
 	visibility: hidden;
+	height: 620px;
+	overflow-y: auto;
 }
 
 .bio img{
