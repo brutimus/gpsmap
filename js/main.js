@@ -7,10 +7,11 @@ var homeIcon = L.icon({
     popupAnchor:  [1, 1]
 });
 
-var mapCenters = [{case: "vargas", zoom: 12, lat: 33.797979374698, lon: -117.84793853759764},
+var mapCenters = [
+	{case: "vargas", zoom: 14, lat: 33.75017784990803, lon: -117.83995628356932},
 	{case: "jackson", zoom: 12, lat: 33.7934144111874, lon: -117.8788375854492},
-	{case: "estepp", zoom: 12, lat: 33.794555674887555, lon: -117.89154052734375},
-	{case: "anaya", zoom: 12, lat: 33.803114667648735, lon: -117.89703369140625},
+	{case: "estepp", zoom: 13, lat: 33.83862533964331, lon: -117.96089172363281},
+	{case: "anaya", zoom: 14, lat: 33.75074877169742, lon: -117.84141540527342},
 	{case: "unknown", zoom: 12,lat: 33.803114667648735, lon: -117.89703369140625},
 	{case: "gordon", zoom: 12, lat: 33.804541083228784, lon: -117.894287109375},
 	{case: "cano", zoom: 12, lat: 33.804541083228784, lon: -117.894287109375}];
@@ -29,7 +30,7 @@ map.addLayer(markers);
 
 var home = L.marker([33.85515, -117.84627], {icon: homeIcon}).bindPopup("Cano/Gordon home and work").addTo(map);
 
-L.circle([33.8472089, -117.9179817], 100, {color: "#000", fillOpacity: .8, opacity: .3})
+L.circle([33.854533, -117.8457798], 100, {color: "#000", fillOpacity: .8, opacity: .3})
 				.bindPopup("Dumpster location")
 				.addTo(map);
 
