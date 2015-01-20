@@ -1,0 +1,3 @@
+[submodule "js/leaflet.label"]
+	path = js/leaflet.label
+	url = https://github.com/Leaflet/Leaflet.label.git

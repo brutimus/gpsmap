@@ -18,8 +18,8 @@ var mapCenters = [
 
 var layer = new L.StamenTileLayer("toner");
 var map = new L.Map("map", {
-    center: new L.LatLng(33.846725, -117.940349),
-    zoom: 11
+    center: new L.LatLng(33.75017784990803, -117.83995628356932),
+    zoom: 14
 });
 map.addLayer(layer);
 
@@ -28,10 +28,10 @@ var susColor = "#d90000";
 markers = new L.FeatureGroup();
 map.addLayer(markers);
 
-var home = L.marker([33.85515, -117.84627], {icon: homeIcon}).bindPopup("Cano/Gordon home and work").addTo(map);
+var home = L.marker([33.85515, -117.84627], {icon: homeIcon}).bindLabel("Cano/Gordon home and work").addTo(map);
 
 L.circle([33.854533, -117.8457798], 100, {color: "#000", fillOpacity: .8, opacity: .3})
-				.bindPopup("Dumpster location")
+				.bindLabel("Dumpster location")
 				.addTo(map);
 
 $('.vic-select img').map(function (i,d){ $(d).css('border-bottom', '5px solid ' + getColor($(d).prev()[0].defaultValue)) });
@@ -111,7 +111,7 @@ $.getJSON("json/events.json", function (data){
 
 		if(d.case === currentCase){
 			L.circle([d.lat, d.lon], 100, {color: (d.marker === "cg") ? susColor : getColor(d.case), fillOpacity: .8, opacity: .3}).addTo(map)
-				.bindPopup(d.keegan + " " + d.time)
+				.bindLabel(d.keegan + " " + d.time)
 				.addTo(markers);
 		}
 		
@@ -193,7 +193,7 @@ $.getJSON("json/events.json", function (data){
 
 			if(d.case === currentCase){
 				L.circle([d.lat, d.lon], 100, {color: (d.marker === "cg") ? susColor : getColor(d.case), fillOpacity: .8, opacity: .3}).addTo(map)
-					.bindPopup(d.keegan + " " + d.time)
+					.bindLabel(d.keegan + " " + d.time)
 					.addTo(markers);
 			};
 		
